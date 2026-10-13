@@ -1,0 +1,560 @@
+{
+  "task": "shinobi",
+  "frame_rate": [
+    {
+      "method": "onset gaps",
+      "sessions": 35,
+      "pairs": 364,
+      "median": 60.010628354867585,
+      "q1": 59.999264455337936,
+      "q3": 60.01913156265652
+    },
+    {
+      "method": "logged play time",
+      "sessions": 35,
+      "pairs": 490,
+      "median": 60.00324940708477,
+      "q1": 59.99926523749292,
+      "q3": 60.0187954910072
+    }
+  ],
+  "findings": [
+    {
+      "check": "death-labelled-cleared",
+      "severity": "error",
+      "where": "sub-01_ses-002_task-shinobi_run-03_level-4_rep-03",
+      "message": "health reaches 0 at frame 5653 and the replay ends 132 frames later, before a life is taken off",
+      "evidence": {
+        "health_zero_frame": 5653,
+        "frames": 5785,
+        "status_last": 43,
+        "X_screen_total_last": 6826
+      },
+      "fix": "treat health == 0 as a death in shinobi_outcome (failed/killed)"
+    },
+    {
+      "check": "stopped-mid-level-labelled-cleared",
+      "severity": "error",
+      "where": "sub-01_ses-007_task-shinobi_run-03_level-4_rep-03",
+      "message": "no death and no section change, but the replay stops at X_screen_total 3506 (level end ~8892)",
+      "evidence": {
+        "frames": 10458,
+        "health_last": 13,
+        "status_last": 32,
+        "X_screen_total_last": 3506
+      },
+      "fix": "label as incomplete/interrupted (shinobi #45)"
+    },
+    {
+      "check": "death-labelled-cleared",
+      "severity": "error",
+      "where": "sub-01_ses-011_task-shinobi_run-03_level-4_rep-03",
+      "message": "health reaches 0 at frame 1544 and the replay ends 255 frames later, before a life is taken off",
+      "evidence": {
+        "health_zero_frame": 1544,
+        "frames": 1799,
+        "status_last": 43,
+        "X_screen_total_last": 1600
+      },
+      "fix": "treat health == 0 as a death in shinobi_outcome (failed/killed)"
+    },
+    {
+      "check": "stopped-mid-level-labelled-cleared",
+      "severity": "error",
+      "where": "sub-02_ses-002_task-shinobi_run-05_level-4_rep-05",
+      "message": "no death and no section change, but the replay stops at X_screen_total 3168 (level end ~8892)",
+      "evidence": {
+        "frames": 5547,
+        "health_last": 16,
+        "status_last": 32,
+        "X_screen_total_last": 3168
+      },
+      "fix": "label as incomplete/interrupted (shinobi #45)"
+    },
+    {
+      "check": "length-mismatch",
+      "severity": "error",
+      "where": "sub-02_ses-005_task-shinobi_run-01_level-1_rep-01",
+      "message": "replay has 9809 frames but the task logged 9879 (164.65 s) for this row",
+      "evidence": {
+        "row": 0,
+        "onset": 0.007,
+        "bk2_frames": 9809,
+        "logged_frames": 9879,
+        "matching_files_in_session": [
+          "sub-02_ses-005_task-shinobi_run-02_level-1_rep-01.bk2"
+        ]
+      },
+      "fix": "this row's replay is probably sub-02_ses-005_task-shinobi_run-02_level-1_rep-01.bk2"
+    },
+    {
+      "check": "length-mismatch",
+      "severity": "error",
+      "where": "sub-02_ses-005_task-shinobi_run-01_level-4_rep-01",
+      "message": "replay has 4036 frames but the task logged 9013 (150.22 s) for this row",
+      "evidence": {
+        "row": 1,
+        "onset": 170.622,
+        "bk2_frames": 4036,
+        "logged_frames": 9013,
+        "matching_files_in_session": [
+          "sub-02_ses-005_task-shinobi_run-02_level-4_rep-01.bk2"
+        ]
+      },
+      "fix": "this row's replay is probably sub-02_ses-005_task-shinobi_run-02_level-4_rep-01.bk2"
+    },
+    {
+      "check": "length-mismatch",
+      "severity": "error",
+      "where": "sub-02_ses-005_task-shinobi_run-01_level-5_rep-01",
+      "message": "replay has 11263 frames but the task logged 11035 (183.92 s) for this row",
+      "evidence": {
+        "row": 2,
+        "onset": 326.858,
+        "bk2_frames": 11263,
+        "logged_frames": 11035,
+        "matching_files_in_session": [
+          "sub-02_ses-005_task-shinobi_run-02_level-5_rep-01.bk2"
+        ]
+      },
+      "fix": "this row's replay is probably sub-02_ses-005_task-shinobi_run-02_level-5_rep-01.bk2"
+    },
+    {
+      "check": "length-mismatch",
+      "severity": "error",
+      "where": "sub-02_ses-005_task-shinobi_run-01_level-1_rep-02",
+      "message": "replay has 9836 frames but the task logged 9907 (165.12 s) for this row",
+      "evidence": {
+        "row": 3,
+        "onset": 516.794,
+        "bk2_frames": 9836,
+        "logged_frames": 9907,
+        "matching_files_in_session": [
+          "sub-02_ses-005_task-shinobi_run-02_level-1_rep-02.bk2"
+        ]
+      },
+      "fix": "this row's replay is probably sub-02_ses-005_task-shinobi_run-02_level-1_rep-02.bk2"
+    },
+    {
+      "check": "clock-mismatch",
+      "severity": "error",
+      "where": "sub-02_ses-005_task-shinobi_run-01_level-5_rep-01",
+      "message": "replay was written -83 s away from where this row's onset puts its end (run median offset)",
+      "evidence": {
+        "row": 2,
+        "onset": 326.858,
+        "written_at": "2020-10-05T11:36:46",
+        "offset_s": -82.7
+      },
+      "fix": "the file is attached to the wrong row, or the row's onset is wrong"
+    },
+    {
+      "check": "length-mismatch",
+      "severity": "error",
+      "where": "sub-02_ses-005_task-shinobi_run-02_level-1_rep-01",
+      "message": "replay has 9879 frames but the task logged 9809 (163.48 s) for this row",
+      "evidence": {
+        "row": 0,
+        "onset": 0.007,
+        "bk2_frames": 9879,
+        "logged_frames": 9809,
+        "matching_files_in_session": [
+          "sub-02_ses-005_task-shinobi_run-01_level-1_rep-01.bk2"
+        ]
+      },
+      "fix": "this row's replay is probably sub-02_ses-005_task-shinobi_run-01_level-1_rep-01.bk2"
+    },
+    {
+      "check": "length-mismatch",
+      "severity": "error",
+      "where": "sub-02_ses-005_task-shinobi_run-02_level-4_rep-01",
+      "message": "replay has 9013 frames but the task logged 4036 (67.27 s) for this row",
+      "evidence": {
+        "row": 1,
+        "onset": 169.415,
+        "bk2_frames": 9013,
+        "logged_frames": 4036,
+        "matching_files_in_session": [
+          "sub-02_ses-005_task-shinobi_run-01_level-4_rep-01.bk2"
+        ]
+      },
+      "fix": "this row's replay is probably sub-02_ses-005_task-shinobi_run-01_level-4_rep-01.bk2"
+    },
+    {
+      "check": "length-mismatch",
+      "severity": "error",
+      "where": "sub-02_ses-005_task-shinobi_run-02_level-5_rep-01",
+      "message": "replay has 11035 frames but the task logged 11263 (187.72 s) for this row",
+      "evidence": {
+        "row": 2,
+        "onset": 242.699,
+        "bk2_frames": 11035,
+        "logged_frames": 11263,
+        "matching_files_in_session": [
+          "sub-02_ses-005_task-shinobi_run-01_level-5_rep-01.bk2"
+        ]
+      },
+      "fix": "this row's replay is probably sub-02_ses-005_task-shinobi_run-01_level-5_rep-01.bk2"
+    },
+    {
+      "check": "length-mismatch",
+      "severity": "error",
+      "where": "sub-02_ses-005_task-shinobi_run-02_level-1_rep-02",
+      "message": "replay has 9907 frames but the task logged 9836 (163.93 s) for this row",
+      "evidence": {
+        "row": 3,
+        "onset": 436.471,
+        "bk2_frames": 9907,
+        "logged_frames": 9836,
+        "matching_files_in_session": [
+          "sub-02_ses-005_task-shinobi_run-01_level-1_rep-02.bk2"
+        ]
+      },
+      "fix": "this row's replay is probably sub-02_ses-005_task-shinobi_run-01_level-1_rep-02.bk2"
+    },
+    {
+      "check": "clock-mismatch",
+      "severity": "error",
+      "where": "sub-02_ses-005_task-shinobi_run-02_level-5_rep-01",
+      "message": "replay was written +81 s away from where this row's onset puts its end (run median offset)",
+      "evidence": {
+        "row": 2,
+        "onset": 242.699,
+        "written_at": "2020-10-05T11:25:00",
+        "offset_s": 81.0
+      },
+      "fix": "the file is attached to the wrong row, or the row's onset is wrong"
+    },
+    {
+      "check": "blank-stim-file",
+      "severity": "warning",
+      "where": "sub-02_ses-007_task-shinobi_run-03_events.tsv row 0",
+      "message": "gym-retro_game row has an empty stim_file instead of the 'Missing file' flag",
+      "evidence": {
+        "onset": 0.007499999999708962,
+        "level": "1-0"
+      },
+      "fix": "write 'Missing file' (or n/a) like the other rows without a replay"
+    },
+    {
+      "check": "blank-stim-file",
+      "severity": "warning",
+      "where": "sub-02_ses-007_task-shinobi_run-04_events.tsv row 0",
+      "message": "gym-retro_game row has an empty stim_file instead of the 'Missing file' flag",
+      "evidence": {
+        "onset": 0.007400000002235174,
+        "level": "1-0"
+      },
+      "fix": "write 'Missing file' (or n/a) like the other rows without a replay"
+    },
+    {
+      "check": "blank-stim-file",
+      "severity": "warning",
+      "where": "sub-02_ses-007_task-shinobi_run-05_events.tsv row 0",
+      "message": "gym-retro_game row has an empty stim_file instead of the 'Missing file' flag",
+      "evidence": {
+        "onset": 0.0076999999982945155,
+        "level": "1-0"
+      },
+      "fix": "write 'Missing file' (or n/a) like the other rows without a replay"
+    },
+    {
+      "check": "stopped-mid-level-labelled-cleared",
+      "severity": "error",
+      "where": "sub-02_ses-007_task-shinobi_run-05_level-4_rep-04",
+      "message": "no death and no section change, but the replay stops at X_screen_total 3266 (level end ~8892)",
+      "evidence": {
+        "frames": 11363,
+        "health_last": 14,
+        "status_last": 25,
+        "X_screen_total_last": 3266
+      },
+      "fix": "label as incomplete/interrupted (shinobi #45)"
+    },
+    {
+      "check": "stopped-mid-level-labelled-cleared",
+      "severity": "error",
+      "where": "sub-02_ses-008_task-shinobi_run-02_level-4_rep-02",
+      "message": "no death and no section change, but the replay stops at X_screen_total 3263 (level end ~8892)",
+      "evidence": {
+        "frames": 9941,
+        "health_last": 15,
+        "status_last": 25,
+        "X_screen_total_last": 3263
+      },
+      "fix": "label as incomplete/interrupted (shinobi #45)"
+    },
+    {
+      "check": "stopped-mid-level-labelled-cleared",
+      "severity": "error",
+      "where": "sub-02_ses-011_task-shinobi_run-03_level-4_rep-03",
+      "message": "no death and no section change, but the replay stops at X_screen_total 3296 (level end ~8892)",
+      "evidence": {
+        "frames": 9106,
+        "health_last": 15,
+        "status_last": 32,
+        "X_screen_total_last": 3296
+      },
+      "fix": "label as incomplete/interrupted (shinobi #45)"
+    },
+    {
+      "check": "stopped-mid-level-labelled-cleared",
+      "severity": "error",
+      "where": "sub-02_ses-012_task-shinobi_run-03_level-4_rep-03",
+      "message": "no death and no section change, but the replay stops at X_screen_total 3295 (level end ~8892)",
+      "evidence": {
+        "frames": 9523,
+        "health_last": 13,
+        "status_last": 32,
+        "X_screen_total_last": 3295
+      },
+      "fix": "label as incomplete/interrupted (shinobi #45)"
+    },
+    {
+      "check": "stopped-mid-level-labelled-cleared",
+      "severity": "error",
+      "where": "sub-02_ses-014_task-shinobi_run-02_level-4_rep-02",
+      "message": "no death and no section change, but the replay stops at X_screen_total 3232 (level end ~8892)",
+      "evidence": {
+        "frames": 3249,
+        "health_last": 9,
+        "status_last": 1,
+        "X_screen_total_last": 3232
+      },
+      "fix": "label as incomplete/interrupted (shinobi #45)"
+    },
+    {
+      "check": "stopped-mid-level-labelled-cleared",
+      "severity": "error",
+      "where": "sub-02_ses-015_task-shinobi_run-05_level-4_rep-05",
+      "message": "no death and no section change, but the replay stops at X_screen_total 3289 (level end ~8892)",
+      "evidence": {
+        "frames": 8761,
+        "health_last": 7,
+        "status_last": 32,
+        "X_screen_total_last": 3289
+      },
+      "fix": "label as incomplete/interrupted (shinobi #45)"
+    },
+    {
+      "check": "blank-stim-file",
+      "severity": "warning",
+      "where": "sub-04_ses-010_task-shinobi_run-02_events.tsv row 0",
+      "message": "gym-retro_game row has an empty stim_file instead of the 'Missing file' flag",
+      "evidence": {
+        "onset": 0.005199909210205078,
+        "level": "1-0"
+      },
+      "fix": "write 'Missing file' (or n/a) like the other rows without a replay"
+    },
+    {
+      "check": "blank-stim-file",
+      "severity": "warning",
+      "where": "sub-04_ses-010_task-shinobi_run-03_events.tsv row 0",
+      "message": "gym-retro_game row has an empty stim_file instead of the 'Missing file' flag",
+      "evidence": {
+        "onset": 0.005000114440917969,
+        "level": "1-0"
+      },
+      "fix": "write 'Missing file' (or n/a) like the other rows without a replay"
+    },
+    {
+      "check": "blank-stim-file",
+      "severity": "warning",
+      "where": "sub-04_ses-010_task-shinobi_run-04_events.tsv row 1",
+      "message": "gym-retro_game row has an empty stim_file instead of the 'Missing file' flag",
+      "evidence": {
+        "onset": 196.2630000114441,
+        "level": "4-1"
+      },
+      "fix": "write 'Missing file' (or n/a) like the other rows without a replay"
+    },
+    {
+      "check": "blank-stim-file",
+      "severity": "warning",
+      "where": "sub-04_ses-010_task-shinobi_run-05_events.tsv row 0",
+      "message": "gym-retro_game row has an empty stim_file instead of the 'Missing file' flag",
+      "evidence": {
+        "onset": 0.005700111389160156,
+        "level": "1-0"
+      },
+      "fix": "write 'Missing file' (or n/a) like the other rows without a replay"
+    },
+    {
+      "check": "copy-under-other-run",
+      "severity": "error",
+      "where": "sub-01_ses-007_task-shinobi_run-03_level-1_rep-04",
+      "message": "not referenced by any row, and byte-identical to sub-01_ses-007_task-shinobi_run-02_level-1_rep-04.bk2; row 0 of sub-01_ses-007_task-shinobi_run-03_events.tsv says 'Missing File' and logs this copy's length, not its own",
+      "evidence": {
+        "frames": 9247,
+        "written_at": "2020-11-06T11:35:20",
+        "copy_of": "sub-01_ses-007_task-shinobi_run-02_level-1_rep-04.bk2",
+        "copy_of_row": "sub-01_ses-007_task-shinobi_run-02_events.tsv:3",
+        "missing_row": "sub-01_ses-007_task-shinobi_run-03_events.tsv:0",
+        "missing_row_play_time_s": 154.57910000000263,
+        "missing_row_logged_s": 154.11666666666667
+      },
+      "fix": "delete the copy (or move it out of gamelogs/); the repetition it is named after has no replay"
+    },
+    {
+      "check": "copy-under-other-run",
+      "severity": "error",
+      "where": "sub-01_ses-007_task-shinobi_run-05_level-4_rep-05",
+      "message": "not referenced by any row, and byte-identical to sub-01_ses-007_task-shinobi_run-04_level-4_rep-05.bk2; row 1 of sub-01_ses-007_task-shinobi_run-05_events.tsv says 'Missing File' and logs this copy's length, not its own",
+      "evidence": {
+        "frames": 7431,
+        "written_at": "2020-11-06T11:35:20",
+        "copy_of": "sub-01_ses-007_task-shinobi_run-04_level-4_rep-05.bk2",
+        "copy_of_row": "sub-01_ses-007_task-shinobi_run-04_events.tsv:4",
+        "missing_row": "sub-01_ses-007_task-shinobi_run-05_events.tsv:1",
+        "missing_row_play_time_s": 124.29959999999846,
+        "missing_row_logged_s": 123.85
+      },
+      "fix": "delete the copy (or move it out of gamelogs/); the repetition it is named after has no replay"
+    },
+    {
+      "check": "copy-under-other-run",
+      "severity": "error",
+      "where": "sub-01_ses-009_task-shinobi_run-02_level-1_rep-02",
+      "message": "not referenced by any row, and byte-identical to sub-01_ses-009_task-shinobi_run-01_level-1_rep-02.bk2; row 0 of sub-01_ses-009_task-shinobi_run-02_events.tsv says 'Missing File' and logs this copy's length, not its own",
+      "evidence": {
+        "frames": 10764,
+        "written_at": "2020-11-20T11:42:44",
+        "copy_of": "sub-01_ses-009_task-shinobi_run-01_level-1_rep-02.bk2",
+        "copy_of_row": "sub-01_ses-009_task-shinobi_run-01_events.tsv:3",
+        "missing_row": "sub-01_ses-009_task-shinobi_run-02_events.tsv:0",
+        "missing_row_play_time_s": 180.39019999999985,
+        "missing_row_logged_s": 179.4
+      },
+      "fix": "delete the copy (or move it out of gamelogs/); the repetition it is named after has no replay"
+    },
+    {
+      "check": "copy-under-other-run",
+      "severity": "error",
+      "where": "sub-01_ses-010_task-shinobi_run-03_level-4_rep-03",
+      "message": "not referenced by any row, and byte-identical to sub-01_ses-010_task-shinobi_run-02_level-4_rep-03.bk2; row 1 of sub-01_ses-010_task-shinobi_run-03_events.tsv says 'Missing File' and logs this copy's length, not its own",
+      "evidence": {
+        "frames": 7262,
+        "written_at": "2020-11-27T17:01:38",
+        "copy_of": "sub-01_ses-010_task-shinobi_run-02_level-4_rep-03.bk2",
+        "copy_of_row": "sub-01_ses-010_task-shinobi_run-02_events.tsv:4",
+        "missing_row": "sub-01_ses-010_task-shinobi_run-03_events.tsv:1",
+        "missing_row_play_time_s": 121.55050000000485,
+        "missing_row_logged_s": 121.03333333333332
+      },
+      "fix": "delete the copy (or move it out of gamelogs/); the repetition it is named after has no replay"
+    },
+    {
+      "check": "copy-under-other-run",
+      "severity": "error",
+      "where": "sub-01_ses-012_task-shinobi_run-03_level-4_rep-03",
+      "message": "not referenced by any row, and byte-identical to sub-01_ses-012_task-shinobi_run-02_level-4_rep-03.bk2; row 1 of sub-01_ses-012_task-shinobi_run-03_events.tsv says 'Missing File' and logs this copy's length, not its own",
+      "evidence": {
+        "frames": 6290,
+        "written_at": "2020-12-11T12:13:24",
+        "copy_of": "sub-01_ses-012_task-shinobi_run-02_level-4_rep-03.bk2",
+        "copy_of_row": "sub-01_ses-012_task-shinobi_run-02_events.tsv:4",
+        "missing_row": "sub-01_ses-012_task-shinobi_run-03_events.tsv:1",
+        "missing_row_play_time_s": 105.43390000000365,
+        "missing_row_logged_s": 104.83333333333331
+      },
+      "fix": "delete the copy (or move it out of gamelogs/); the repetition it is named after has no replay"
+    },
+    {
+      "check": "copy-under-other-run",
+      "severity": "error",
+      "where": "sub-02_ses-002_task-shinobi_run-04_level-4_rep-04",
+      "message": "not referenced by any row, and byte-identical to sub-02_ses-002_task-shinobi_run-03_level-4_rep-04.bk2; row 1 of sub-02_ses-002_task-shinobi_run-04_events.tsv says 'Missing File' and logs this copy's length, not its own",
+      "evidence": {
+        "frames": 7209,
+        "written_at": "2020-09-18T10:46:24",
+        "copy_of": "sub-02_ses-002_task-shinobi_run-03_level-4_rep-04.bk2",
+        "copy_of_row": "sub-02_ses-002_task-shinobi_run-03_events.tsv:4",
+        "missing_row": "sub-02_ses-002_task-shinobi_run-04_events.tsv:1",
+        "missing_row_play_time_s": 120.83879999999772,
+        "missing_row_logged_s": 120.15
+      },
+      "fix": "delete the copy (or move it out of gamelogs/); the repetition it is named after has no replay"
+    },
+    {
+      "check": "copy-under-other-run",
+      "severity": "error",
+      "where": "sub-02_ses-006_task-shinobi_run-02_level-1_rep-02",
+      "message": "not referenced by any row, and byte-identical to sub-02_ses-006_task-shinobi_run-01_level-1_rep-02.bk2; row 0 of sub-02_ses-006_task-shinobi_run-02_events.tsv says 'Missing File' and logs this copy's length, not its own",
+      "evidence": {
+        "frames": 9667,
+        "written_at": "2020-10-19T11:45:38",
+        "copy_of": "sub-02_ses-006_task-shinobi_run-01_level-1_rep-02.bk2",
+        "copy_of_row": "sub-02_ses-006_task-shinobi_run-01_events.tsv:3",
+        "missing_row": "sub-02_ses-006_task-shinobi_run-02_events.tsv:0",
+        "missing_row_play_time_s": 162.06630000000587,
+        "missing_row_logged_s": 161.11666666666667
+      },
+      "fix": "delete the copy (or move it out of gamelogs/); the repetition it is named after has no replay"
+    },
+    {
+      "check": "copy-under-other-run",
+      "severity": "error",
+      "where": "sub-02_ses-012_task-shinobi_run-04_level-1_rep-05",
+      "message": "not referenced by any row, and byte-identical to sub-02_ses-012_task-shinobi_run-03_level-1_rep-05.bk2; row 0 of sub-02_ses-012_task-shinobi_run-04_events.tsv says 'Missing File' and logs this copy's length, not its own",
+      "evidence": {
+        "frames": 9687,
+        "written_at": "2020-11-30T11:40:12",
+        "copy_of": "sub-02_ses-012_task-shinobi_run-03_level-1_rep-05.bk2",
+        "copy_of_row": "sub-02_ses-012_task-shinobi_run-03_events.tsv:3",
+        "missing_row": "sub-02_ses-012_task-shinobi_run-04_events.tsv:0",
+        "missing_row_play_time_s": 162.10970000000088,
+        "missing_row_logged_s": 161.45
+      },
+      "fix": "delete the copy (or move it out of gamelogs/); the repetition it is named after has no replay"
+    },
+    {
+      "check": "copy-under-other-run",
+      "severity": "error",
+      "where": "sub-02_ses-012_task-shinobi_run-05_level-1_rep-06",
+      "message": "not referenced by any row, and byte-identical to sub-02_ses-012_task-shinobi_run-04_level-1_rep-06.bk2; row 0 of sub-02_ses-012_task-shinobi_run-05_events.tsv says 'Missing File' and logs this copy's length, not its own",
+      "evidence": {
+        "frames": 9567,
+        "written_at": "2020-11-30T11:40:12",
+        "copy_of": "sub-02_ses-012_task-shinobi_run-04_level-1_rep-06.bk2",
+        "copy_of_row": "sub-02_ses-012_task-shinobi_run-04_events.tsv:3",
+        "missing_row": "sub-02_ses-012_task-shinobi_run-05_events.tsv:0",
+        "missing_row_play_time_s": 159.44109999999637,
+        "missing_row_logged_s": 159.45
+      },
+      "fix": "delete the copy (or move it out of gamelogs/); the repetition it is named after has no replay"
+    },
+    {
+      "check": "copy-under-other-run",
+      "severity": "error",
+      "where": "sub-02_ses-015_task-shinobi_run-03_level-1_rep-03",
+      "message": "not referenced by any row, and byte-identical to sub-02_ses-015_task-shinobi_run-02_level-1_rep-03.bk2; row 0 of sub-02_ses-015_task-shinobi_run-03_events.tsv says 'Missing File' and logs this copy's length, not its own",
+      "evidence": {
+        "frames": 9667,
+        "written_at": "2020-12-17T10:08:48",
+        "copy_of": "sub-02_ses-015_task-shinobi_run-02_level-1_rep-03.bk2",
+        "copy_of_row": "sub-02_ses-015_task-shinobi_run-02_events.tsv:3",
+        "missing_row": "sub-02_ses-015_task-shinobi_run-03_events.tsv:0",
+        "missing_row_play_time_s": 162.08580000000077,
+        "missing_row_logged_s": 161.11666666666667
+      },
+      "fix": "delete the copy (or move it out of gamelogs/); the repetition it is named after has no replay"
+    },
+    {
+      "check": "copy-under-other-run",
+      "severity": "error",
+      "where": "sub-06_ses-013_task-shinobi_run-04_level-5_rep-01",
+      "message": "not referenced by any row, and byte-identical to sub-06_ses-013_task-shinobi_run-01_level-5_rep-01.bk2; row 2 of sub-06_ses-013_task-shinobi_run-04_events.tsv says 'Missing File' and logs this copy's length, not its own",
+      "evidence": {
+        "frames": 12501,
+        "written_at": "2021-02-26T16:52:42",
+        "copy_of": "sub-06_ses-013_task-shinobi_run-01_level-5_rep-01.bk2",
+        "copy_of_row": "sub-06_ses-013_task-shinobi_run-01_events.tsv:2",
+        "missing_row": "sub-06_ses-013_task-shinobi_run-04_events.tsv:2",
+        "missing_row_play_time_s": 207.41910000000087,
+        "missing_row_logged_s": 208.35
+      },
+      "fix": "delete the copy (or move it out of gamelogs/); the repetition it is named after has no replay"
+    }
+  ]
+}

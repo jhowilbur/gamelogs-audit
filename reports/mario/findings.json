@@ -1,0 +1,14 @@
+{
+  "task": "mario",
+  "frame_rate": [
+    {
+      "method": "onset gaps",
+      "sessions": 119,
+      "pairs": 2866,
+      "median": 60.001339602720506,
+      "q1": 59.99983425722169,
+      "q3": 60.003355566356134
+    }
+  ],
+  "findings": []
+}

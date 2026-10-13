@@ -1,0 +1,25 @@
+# .github/workflows/gamelogs-audit.yml in a videogame dataset repo (e.g. shinobi)
+name: gamelogs-audit
+on: [push, pull_request]
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install DataLad, git-annex and the checker
+        run: |
+          pip install datalad git-annex
+          pip install git+https://github.com/jhowilbur/gamelogs-audit
+      - name: Fetch replays and events only
+        run: |
+          git annex init
+          find sub-* \( -name '*.bk2' -o -name '*_events.tsv' \) -print0 \
+            | xargs -0 datalad get -J 8 || true   # restricted subjects stay absent
+      - name: Audit
+        run: gamelogs-audit . --out audit
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: gamelogs-audit, path: audit/ }
